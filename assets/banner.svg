@@ -1,0 +1,42 @@
+<svg width="1000" height="250" viewBox="0 0 1000 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harsh Gahlot — Backend Engineer and Applied AI">
+  <style>
+    .name { font: 900 84px Arial, Helvetica, sans-serif; letter-spacing: 2px; }
+    .label { font: 600 13px 'Courier New', monospace; letter-spacing: 6px; }
+    .fade { opacity: 0; animation: fadeIn 0.9s ease-out 0.15s forwards; }
+    .sweep { animation: sweep 9s cubic-bezier(0.65, 0, 0.35, 1) infinite alternate; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes sweep {
+      from { transform: translateX(-70px); }
+      to   { transform: translateX(70px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade { opacity: 1; animation: none; }
+      .sweep { animation: none; }
+    }
+  </style>
+
+  <!-- ground -->
+  <rect width="1000" height="250" rx="10" fill="#0E0F12"/>
+
+  <g class="fade">
+    <!-- base world: backend, ink -->
+    <text x="500" y="138" text-anchor="middle" class="name" fill="#EDEEF0">HARSH GAHLOT</text>
+
+    <!-- overlay world: applied AI, lime — clipped right of the moving split -->
+    <clipPath id="split">
+      <rect class="sweep" x="500" y="0" width="500" height="250"/>
+    </clipPath>
+    <g clip-path="url(#split)">
+      <rect width="1000" height="250" fill="#0E0F12"/>
+      <text x="500" y="138" text-anchor="middle" class="name" fill="#D9F24F">HARSH GAHLOT</text>
+    </g>
+
+    <!-- divider, synchronized with the clip -->
+    <rect class="sweep" x="499" y="30" width="2" height="190" fill="#D9F24F"/>
+
+    <!-- identity labels -->
+    <text x="255" y="192" text-anchor="middle" class="label" fill="#9BA0AB">BACKEND ENGINEER</text>
+    <text x="745" y="192" text-anchor="middle" class="label" fill="#D9F24F">APPLIED AI</text>
+    <text x="500" y="228" text-anchor="middle" class="label" fill="#5C616C" style="letter-spacing:3px">JAVA · SPRING BOOT · KAFKA · RAG · LANGCHAIN</text>
+  </g>
+</svg>
